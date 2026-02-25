@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currículo Profissional - Vanessa Rodrigues Alves Nascimento</title>
+    <style>
+      :root {
+        --cor-primaria: #2c3e50;
+        --cor-destaque: #3498db;
+        --texto-escuro: #2d3436;
+        --texto-claro: #ffffff;
+        --fundo-cinza: #f8f9fa;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", Arial, sans-serif;
+        background-color: #e9ecef;
+        margin: 0;
+        padding: 0; /* Removido para controle total do cartão */
+        color: var(--texto-escuro);
+        -webkit-print-color-adjust: exact;
+      }
+
+      .cartao-curriculo {
+        max-width: 900px; /* Levemente reduzido para garantir margens no PDF */
+        margin: 20px auto;
+        display: flex;
+        background: white;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        min-height: 1120px; /* Altura aproximada do A4 */
+        border-radius: 8px;
+        overflow: hidden;
+      }
+
+      /* COLUNA LATERAL */
+      .barra-lateral {
+        width: 32%; /* Ajustado para dar mais espaço ao conteúdo principal */
+        background-color: var(--cor-primaria);
+        color: var(--texto-claro);
+        padding: 30px 20px;
+      }
+
+      .foto-perfil {
+        width: 160px; /* Reduzido para economizar espaço vertical */
+        height: 160px;
+        border-radius: 50%;
+        border: 4px solid var(--cor-destaque);
+        margin: 0 auto 20px;
+        display: block;
+        object-fit: cover;
+        background-color: #eee;
+      }
+
+      .secao-lateral {
+        margin-bottom: 25px;
+      }
+
+      .titulo-lateral {
+        font-size: 1rem;
+        border-bottom: 2px solid var(--cor-destaque);
+        padding-bottom: 5px;
+        margin-bottom: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1.2px;
+        color: var(--cor-destaque);
+      }
+
+      .lista-competencias {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .lista-competencias li {
+        font-size: 0.85rem;
+        margin-bottom: 6px;
+        padding-left: 12px;
+        position: relative;
+      }
+
+      .lista-competencias li::before {
+        content: "•";
+        color: var(--cor-destaque);
+        position: absolute;
+        left: 0;
+      }
+
+      .info-contato {
+        font-size: 0.8rem;
+        line-height: 1.5;
+      }
+
+      /* COLUNA PRINCIPAL */
+      .conteudo-principal {
+        width: 68%;
+        padding: 40px 45px;
+      }
+
+      .cabecalho-nome h1 {
+        font-size: 2.4rem;
+        margin: 0;
+        color: var(--cor-primaria);
+        line-height: 1;
+        font-weight: 700;
+      }
+
+      .cargo-titulo {
+        font-size: 1.2rem;
+        color: var(--cor-destaque);
+        margin-top: 8px;
+        font-weight: 400;
+        letter-spacing: 1px;
+      }
+
+      .resumo-texto {
+        font-size: 0.92rem;
+        line-height: 1.6;
+        text-align: justify;
+        color: #444;
+        margin-top: 15px;
+      }
+
+      h3 {
+        font-size: 1.15rem;
+        color: var(--cor-primaria);
+        border-bottom: 2px solid var(--fundo-cinza);
+        padding-bottom: 3px;
+        margin-top: 25px;
+        margin-bottom: 12px;
+      }
+
+      .item-experiencia {
+        margin-bottom: 18px;
+      }
+
+      .titulo-experiencia {
+        font-weight: bold;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      .instituicao-data {
+        font-size: 0.85rem;
+        color: var(--cor-destaque);
+        margin-bottom: 5px;
+        display: block;
+      }
+
+      .lista-atividades {
+        padding-left: 18px;
+        font-size: 0.9rem;
+        color: #555;
+        margin: 5px 0;
+      }
+
+      .caixa-destaque {
+        background: var(--fundo-cinza);
+        padding: 12px 15px;
+        border-radius: 6px;
+        border-left: 4px solid var(--cor-destaque);
+        margin-top: 10px;
+        font-size: 0.9rem;
+      }
+
+      /* AJUSTES PARA IMPRESSÃO */
+      @media print {
+        @page {
+          size: A4;
+          margin: 0;
+        }
+        body {
+          background: white;
+        }
+        .cartao-curriculo {
+          margin: 0;
+          box-shadow: none;
+          width: 100%;
+          height: 100vh;
+          border-radius: 0;
+        }
+        .barra-lateral {
+          background-color: var(--cor-primaria) !important;
+          -webkit-print-color-adjust: exact;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cartao-curriculo">
+      <aside class="barra-lateral">
+        <img
+          src="imagens\Profissional1.jpg"
+          alt="Vanessa Rodrigues Alves Nascimento"
+          class="foto-perfil"
+        />
+
+        <div class="secao-lateral">
+          <div class="titulo-lateral">Contato</div>
+          <div class="info-contato">
+            <p>📍 Araguari - MG<br />(Disponibilidade Uberlândia)</p>
+            <p>📞 (34) XXXXX-XXXX</p>
+            <p>📧 vanessa.rodrigues@email.com</p>
+            <p>🌐 linkedin.com/in/vanessapsi</p>
+          </div>
+        </div>
+
+        <div class="secao-lateral">
+          <div class="titulo-lateral">Competências</div>
+          <ul class="lista-competencias">
+            <li>Terapia Cognitivo-Comportamental</li>
+            <li>Avaliação Psicológica</li>
+            <li>Psicopatologia Clínica</li>
+            <li>Atendimento Online e Presencial</li>
+            <li>Manejo de Prontuários (PEP)</li>
+            <li>Ética e Sigilo Profissional</li>
+            <li>Escuta Analítica e Qualificada</li>
+          </ul>
+        </div>
+
+        <div class="secao-lateral">
+          <div class="titulo-lateral">Idiomas</div>
+          <ul class="lista-competencias">
+            <li>Português (Nativo)</li>
+            <li>Inglês (Básico)</li>
+          </ul>
+        </div>
+      </aside>
+
+      <main class="conteudo-principal">
+        <header class="cabecalho-nome">
+          <h1>Vanessa<br />Rodrigues Alves</h1>
+          <div class="cargo-titulo">Psicóloga Clínica | CRP XX/XXXXX</div>
+        </header>
+
+        <section>
+          <p class="resumo-texto">
+            Psicóloga graduada pelo Centro Universitário UNA, com atuação
+            pautada na <strong>Terapia Cognitivo-Comportamental (TCC)</strong>.
+            Especialista em facilitar processos de autoconhecimento e tratamento
+            de transtornos de ansiedade e depressão. Possuo profundo embasamento
+            científico no suporte a indivíduos com <strong>TDAH</strong>, tema
+            central de minha pesquisa de conclusão de curso e prática clínica.
+          </p>
+        </section>
+
+        <section>
+          <h3>Experiência Profissional</h3>
+          <div class="item-experiencia">
+            <span class="titulo-experiencia"
+              >Psicóloga Clínica (Estágio Curricular)</span
+            >
+            <span class="instituicao-data"
+              >Clínica Escola UNA Uberlândia | 2024 - 2025</span
+            >
+            <ul class="lista-atividades">
+              <li>Psicoterapia individual pautada na abordagem TCC.</li>
+              <li>
+                Aplicação e interpretação de instrumentos de avaliação
+                psicológica.
+              </li>
+              <li>
+                Elaboração de laudos e documentos técnicos em conformidade com o
+                CFP.
+              </li>
+              <li>
+                Manejo de demandas de neurodesenvolvimento e saúde mental.
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section>
+          <h3>Formação Acadêmica e Cursos</h3>
+          <div class="item-experiencia" style="margin-bottom: 12px">
+            <span class="titulo-experiencia">Graduação em Psicologia</span>
+            <span class="instituicao-data"
+              >Centro Universitário UNA Uberlândia</span
+            >
+            <p
+              style="
+                font-size: 0.85rem;
+                margin-top: 3px;
+                color: #666;
+                margin-bottom: 0;
+              "
+            >
+              <strong>TCC Acadêmico:</strong> Intervenções psicológicas no TDAH.
+            </p>
+          </div>
+          <div class="item-experiencia">
+            <span class="titulo-experiencia"
+              >Curso de Aperfeiçoamento em Sexologia</span
+            >
+            <span class="instituicao-data">Faculdade Estácio</span>
+          </div>
+        </section>
+
+        <section>
+          <h3>Diferenciais Estratégicos</h3>
+          <div class="caixa-destaque">
+            <strong>Pesquisa em TDAH:</strong> Trabalho dedicado ao estudo do
+            Transtorno do Déficit de Atenção e Hiperatividade, capacitando para
+            estratégias de foco e regulação emocional.
+          </div>
+          <div class="caixa-destaque" style="border-left-color: #2c3e50">
+            <strong>Sexologia Clínica:</strong> Preparo técnico para acolhimento
+            de queixas de sexualidade e relacionamentos sob perspectiva clínica
+            e ética.
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

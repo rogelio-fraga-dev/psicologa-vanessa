@@ -1,0 +1,1349 @@
+/* Importa a fonte do Google que definimos no HTML */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+/* CONCEITO: "Suave & Feminina" - FOCO NO DESTAQUE DOS TEXTOS e FOOTER ELEGANTE */
+:root {
+    --cor-primaria: #D9B8AC;      /* Blush/Rosé médio (Para botões e acentos) */
+    --cor-secundaria: #8C8C8C;    /* Cinza-Taupe (Para fundos e detalhes sutis) */
+    --cor-secundaria-darker: #7a7a7a; /* Tom mais escuro para gradiente do footer e botões */
+    --cor-destaque: #C9A66B;      /* Dourado/Rosé Metálico (Para detalhes finos) */
+
+    --cor-fundo: #F7F6F5;         /* Fundo Branco muito claro */
+    --cor-fundo-secao: #FFFFFF;    /* Branco puro para seções e cards */
+    --cor-texto-principal: #222222; /* Preto MUITO suave - PARA TÍTULOS E TEXTOS IMPORTANTES */
+    --cor-texto-secundario: #333333; /* Preto suave - PARA PARÁGRAFOS E LINKS */
+    --cor-branco: #ffffff;
+    --cor-erro: #e74c3c; /* Cor para mensagens de erro */
+    --cor-sombra: rgba(140, 140, 140, 0.08); /* Sombra baseada no cinza */
+    --cor-sombra-leve: rgba(0, 0, 0, 0.04);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-secundario); /* COR BASE PARA TEXTOS */
+    line-height: 1.8;
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2;
+}
+
+section {
+    padding: 5rem 0;
+    overflow: hidden;
+    position: relative;
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+.background-detailed {
+    background-color: var(--cor-fundo-secao);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.animated-background-shapes,
+.animated-particles {
+    display: none;
+}
+
+/* TÍTULOS COM MÁXIMO DESTAQUE */
+h1, h2, h3 {
+    color: var(--cor-texto-principal); /* TODOS os títulos em preto #222 */
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px var(--cor-sombra-leve);
+}
+
+h1 {
+    font-size: 3.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    font-size: 2.8rem;
+    margin-bottom: 3rem;
+    position: relative;
+    font-weight: 700;
+}
+
+/* Linha de destaque Dourado/Rosé Metálico */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: var(--cor-destaque);
+    margin: 10px auto 0;
+    border-radius: 5px;
+}
+
+h3 {
+    font-size: 1.9rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--cor-texto-secundario); /* Parágrafos em #333 */
+}
+
+.subtitle {
+    font-size: 1.4rem;
+    color: var(--cor-texto-secundario); /* Subtítulo em #333 */
+    margin-bottom: 2.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* BOTÕES GERAIS - COM GRADIENTE E CONTRASTE */
+.cta-button {
+    display: inline-block;
+    /* background-color: var(--cor-primaria); */ /* Removido */
+    background-image: linear-gradient(to right, var(--cor-primaria) 0%, #c0a397 100%); /* Gradiente Blush/Rosé */
+    color: var(--cor-texto-principal); /* Texto em preto #222 */
+    padding: 1.1rem 2.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none; /* Removida borda sólida */
+    /* border: 2px solid var(--cor-primaria); */ /* Se preferir manter a borda */
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px rgba(217, 184, 172, 0.3); /* Sombra um pouco mais forte */
+}
+
+.cta-button:hover {
+    background-image: linear-gradient(to right, #c0a397 0%, #b38f82 100%); /* Gradiente mais escuro no hover */
+    /* border-color: #c0a397; */
+    color: var(--cor-texto-principal);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(217, 184, 172, 0.4);
+}
+
+/* Botão secundário em Cinza-Taupe com gradiente */
+.button-secondary {
+    display: inline-block;
+    /* background-color: var(--cor-secundaria); */ /* Removido */
+    background-image: linear-gradient(to right, var(--cor-secundaria) 0%, var(--cor-secundaria-darker) 100%); /* Gradiente Cinza-Taupe */
+    color: var(--cor-texto-principal); /* Texto em preto #222 */
+    padding: 1.1rem 2.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    border: none; /* Removida borda sólida */
+    /* border: 2px solid var(--cor-secundaria); */ /* Se preferir manter a borda */
+    cursor: pointer;
+    font-size: 1.1rem;
+    letter-spacing: 0.5px;
+    box-shadow: 0 5px 15px var(--cor-sombra);
+    margin-top: 1rem;
+}
+
+.button-secondary:hover {
+    background-image: linear-gradient(to right, var(--cor-secundaria-darker) 0%, #6f6f6f 100%); /* Gradiente mais escuro no hover */
+    /* border-color: #a0a0a0; */
+    color: var(--cor-texto-principal);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(140, 140, 140, 0.2);
+}
+
+
+/* EFEITO PULSANDO NO BOTÃO CTA */
+.pulse {
+    animation: pulse-animation 2s infinite;
+}
+
+@keyframes pulse-animation {
+    0% { transform: scale(1); box-shadow: 0 5px 15px rgba(217, 184, 172, 0.3), 0 0 0 0 rgba(217, 184, 172, 0.4); } /* Combina sombra normal e pulse */
+    70% { transform: scale(1.03); box-shadow: 0 10px 20px rgba(217, 184, 172, 0.4), 0 0 0 15px rgba(217, 184, 172, 0); }
+    100% { transform: scale(1); box-shadow: 0 5px 15px rgba(217, 184, 172, 0.3), 0 0 0 0 rgba(217, 184, 172, 0); }
+}
+
+/* CABEÇALHO E NAVEGAÇÃO */
+.navbar {
+    background-color: var(--cor-branco);
+    padding: 1.2rem 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 15px var(--cor-sombra);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    gap: 2.2rem;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--cor-texto-secundario); /* Links de navegação em #333 */
+    font-weight: 500;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+    padding-bottom: 5px;
+    border-bottom: 3px solid transparent;
+}
+
+.nav-menu a:hover {
+    color: var(--cor-primaria); /* Hover em Blush/Rosé */
+}
+
+.nav-menu a.active-link {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    border-bottom-color: var(--cor-primaria);
+}
+
+
+/* SEÇÃO INICIAL (HERO) - Ajuste no blur do fundo */
+.hero {
+    background: url('imagens/fundo-hero.jpg');
+    background-size: cover;
+    background-position: center;
+    color: var(--cor-branco);
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    filter: blur(5px) brightness(0.6);
+    z-index: -1;
+    transition: filter 0.5s ease;
+}
+
+/* Imagem de perfil maior */
+.hero-profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid var(--cor-branco);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    margin-bottom: 2rem;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--cor-branco); /* Título H1 do Hero continua branco */
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    z-index: 2;
+}
+
+.hero .subtitle {
+    font-size: 1.8rem;
+    color: var(--cor-branco); /* Subtítulo do Hero continua branco */
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+    z-index: 2;
+}
+
+/* ÍCONES SOCIAIS NO HERO */
+.hero-social-links {
+    margin-top: 2rem; /* Espaçamento abaixo do botão CTA */
+    display: flex;
+    justify-content: center;
+    gap: 2rem; /* Espaço entre os ícones */
+    z-index: 2; /* Garante que fiquem acima do overlay */
+}
+
+.hero-social-links a {
+    color: var(--cor-branco); /* Cor branca para visibilidade */
+    font-size: 2.2rem; /* Tamanho dos ícones */
+    transition: color 0.3s ease, transform 0.3s ease;
+    text-decoration: none;
+}
+
+.hero-social-links a:hover {
+    color: var(--cor-primaria); /* Muda para Blush/Rosé no hover */
+    transform: scale(1.1); /* Efeito de zoom suave */
+}
+
+
+/* SEÇÃO SOBRE */
+.sobre-container {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.sobre-imagem {
+    flex: 1;
+    text-align: center;
+    min-width: 280px;
+}
+
+.sobre-imagem img {
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+    border: none;
+    box-shadow: 0 12px 30px var(--cor-sombra);
+    object-fit: cover;
+}
+
+.sobre-texto {
+    flex: 2;
+    min-width: 300px;
+}
+
+.sobre-texto h2 {
+    text-align: left;
+    color: var(--cor-texto-principal); /* H2 no sobre em preto #222 */
+}
+
+.sobre-texto h2::after {
+    margin-left: 0;
+}
+
+.social-links {
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.social-links a {
+    color: var(--cor-secundaria); /* Ícones sociais em Cinza-Taupe */
+    font-size: 2rem;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--cor-primaria); /* Hover em Blush/Rosé */
+    transform: scale(1.1);
+}
+
+/* SEÇÃO ABORDAGEM */
+.abordagem-tcc-content, .abordagem-tdah-content {
+    display: flex;
+    align-items: center;
+    gap: 4rem;
+    margin-bottom: 5rem;
+    flex-wrap: wrap;
+}
+
+.abordagem-tdah-content {
+    flex-wrap: wrap-reverse;
+    margin-bottom: 0;
+}
+
+.abordagem-texto {
+    flex: 2;
+    min-width: 300px;
+}
+
+.abordagem-texto ul {
+    list-style: none;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+    padding-left: 0;
+}
+
+.abordagem-texto ul li {
+    margin-bottom: 0.8rem;
+    font-size: 1.15rem;
+    color: var(--cor-texto-secundario); /* Texto da lista em #333 */
+}
+
+.abordagem-texto ul li i {
+    color: var(--cor-primaria); /* Ícones em Blush/Rosé */
+    margin-right: 12px;
+    font-size: 1.3rem;
+}
+
+.abordagem-imagem {
+    flex: 1;
+    text-align: center;
+    min-width: 280px;
+}
+
+.abordagem-imagem img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px var(--cor-sombra);
+}
+
+/* SEÇÃO "COMO POSSO AJUDAR" */
+#ajuda {
+    background: linear-gradient(rgba(51, 51, 51, 0.92), rgba(51, 51, 51, 0.92)), url('imagens/fundo-ajuda.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    position: relative;
+    color: var(--cor-branco); /* Garante que o texto padrão seja branco */
+}
+
+#ajuda h2 {
+    color: var(--cor-branco); /* H2 continua branco aqui */
+}
+
+#ajuda h2::after {
+    background-color: var(--cor-destaque); /* Linha de destaque em Dourado/Rosé */
+}
+
+/* LAYOUT ATUALIZADO (FOTOS MAIORES) */
+.ajuda-container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.ajuda-texto {
+    flex: 1;
+    min-width: 300px;
+}
+
+/* CORRIGIDO: Garante que o parágrafo principal também seja branco */
+#ajuda .ajuda-texto p {
+    color: var(--cor-branco);
+    font-weight: 300; /* Pode deixar mais leve se necessário */
+}
+
+.ajuda-texto ul {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+/* CORRIGIDO E REFORÇADO: Texto da lista branco e mais destacado */
+#ajuda .ajuda-texto ul li {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    color: var(--cor-branco); /* GARANTIDO BRANCO */
+    font-weight: 400; /* MAIS PESO */
+    display: flex;
+    align-items: flex-start;
+}
+
+#ajuda .ajuda-texto ul li i {
+    color: var(--cor-destaque); /* Ícones em Dourado/Rosé */
+    margin-right: 15px;
+    font-size: 1.2rem;
+    margin-top: 5px;
+}
+
+.ajuda-fotos {
+    flex: 1.5;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.ajuda-foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.ajuda-foto img:hover {
+    transform: scale(1.05);
+}
+
+/* SEÇÃO COMO FUNCIONA - Ajustes de cor e destaque */
+.passos-container {
+    display: flex;
+    justify-content: center;
+    gap: 2.5rem;
+    text-align: center;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.passo {
+    background-color: var(--cor-fundo-secao);
+    padding: 3rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--cor-sombra);
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid var(--cor-primaria); /* Borda em Blush/Rosé */
+}
+
+.passo:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 15px 30px rgba(140, 140, 140, 0.12);
+}
+
+.icone-passo {
+    font-size: 3.5rem;
+    color: var(--cor-primaria); /* Ícones em Blush/Rosé para destaque */
+    margin-bottom: 1.8rem;
+    text-shadow: 1px 1px 2px var(--cor-sombra-leve);
+}
+
+.passo h3 {
+    font-size: 1.7rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto-principal); /* H3 dos passos em preto #222 */
+}
+
+/* CORRIGIDO: Texto do passo mais escuro */
+.passo p {
+    font-size: 1rem;
+    color: var(--cor-texto-principal); /* PARÁGRAFOS DOS PASSOS EM #222 */
+}
+
+/* SEÇÃO FAQ */
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 2rem;
+}
+
+.faq-item {
+    background-color: var(--cor-fundo-secao);
+    margin-bottom: 1.2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--cor-sombra);
+    overflow: hidden;
+}
+
+.faq-pergunta {
+    padding: 1.8rem 2.2rem;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--cor-fundo-secao);
+    font-weight: 600;
+    color: var(--cor-texto-principal); /* Pergunta em preto #222 */
+    transition: background-color 0.3s ease;
+    border-bottom: 1px solid rgba(0,0,0,0.05); /* Separador sutil */
+}
+
+.faq-pergunta:hover {
+    background-color: #fcf9f8; /* Leve hover no fundo */
+}
+
+.faq-pergunta h3 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--cor-texto-principal); /* H3 da pergunta em #222 */
+}
+
+.faq-pergunta i {
+    transition: transform 0.3s ease;
+    color: var(--cor-primaria); /* Ícone de seta em Blush/Rosé */
+    font-size: 1.1rem;
+}
+
+.faq-pergunta.active i {
+    transform: rotate(180deg);
+}
+
+/* CORREÇÃO DO FAQ - Container interno para padding */
+.faq-resposta {
+    /* padding: 0 2.2rem; */ /* Removido daqui */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease-out; /* Transiciona apenas a altura */
+    background-color: var(--cor-branco);
+}
+
+/* NOVO: Div interna para aplicar o padding */
+.faq-resposta-content {
+     padding: 1.5rem 2.2rem; /* Padding aplicado aqui */
+     color: var(--cor-texto-secundario); /* Texto da resposta em #333 */
+}
+
+.faq-resposta-content p {
+    margin-bottom: 0.5rem;
+}
+.faq-resposta-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* JS ainda controla a classe .open e o style.maxHeight */
+
+
+/* SEÇÃO CONTATO */
+.contato-info-header {
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.contato-info-header p {
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+}
+
+.contato-info-header p i {
+    color: var(--cor-primaria); /* Ícones em Blush/Rosé */
+    margin-right: 10px;
+}
+
+.contato-info-header .link-contato {
+    color: var(--cor-texto-secundario); /* Links de contato em #333 */
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500;
+}
+
+.contato-info-header .link-contato:hover {
+    color: var(--cor-primaria);
+    text-decoration: underline;
+}
+
+.whatsapp-box {
+    background-color: var(--cor-fundo-secao);
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--cor-sombra);
+    max-width: 600px;
+    margin: 0 auto 5rem auto;
+    border-top: 5px solid var(--cor-primaria); /* Borda superior em Blush/Rosé */
+}
+
+.whatsapp-box .fa-whatsapp {
+    font-size: 3.5rem;
+    color: #25D366; /* Cor padrão do WhatsApp */
+    margin-bottom: 1rem;
+}
+
+.whatsapp-box h3 {
+    font-size: 1.8rem;
+    color: var(--cor-texto-principal); /* Título em preto #222 */
+    margin-bottom: 0.5rem;
+}
+
+.whatsapp-box p {
+    color: var(--cor-texto-secundario); /* Parágrafo em #333 */
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+}
+
+.whatsapp-box .cta-button {
+    background-color: #25D366;
+    background-image: linear-gradient(to right, #25D366 0%, #128C7E 100%);
+    color: var(--cor-branco); /* Texto do botão WhatsApp branco */
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 5px 15px rgba(37, 211, 102, 0.2);
+}
+
+.whatsapp-box .cta-button:hover {
+    background-image: linear-gradient(to right, #128C7E 0%, #075E54 100%);
+    box-shadow: 0 10px 20px rgba(37, 211, 102, 0.3);
+}
+
+.contato-form {
+    max-width: 650px;
+    margin: 0 auto;
+    background-color: var(--cor-fundo-secao);
+    padding: 3.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px var(--cor-sombra);
+}
+
+.contato-form h3 {
+    font-size: 2rem;
+    margin-bottom: 2.5rem;
+    color: var(--cor-texto-principal); /* Título do formulário em preto #222 */
+}
+
+.form-group {
+    margin-bottom: 1.8rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.6rem;
+    font-weight: 500;
+    color: var(--cor-texto-principal); /* Labels em preto #222 */
+    font-size: 1.05rem;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group textarea {
+    width: 100%;
+    padding: 1.1rem;
+    border: 1px solid #c2c2c2;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    color: var(--cor-texto-principal); /* Texto digitado em preto #222 */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--cor-primaria); /* Borda de foco em Blush/Rosé */
+    box-shadow: 0 0 0 4px rgba(217, 184, 172, 0.3);
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.contato-form .cta-button {
+    width: auto;
+    margin-top: 1.5rem;
+}
+
+.form-security-text {
+    font-size: 0.9rem;
+    color: var(--cor-texto-secundario); /* Texto de segurança em #333 */
+    margin-top: 1.5rem;
+}
+.form-security-text i {
+    margin-right: 5px;
+}
+
+.crp-final {
+    margin-top: 3.5rem;
+    font-size: 1rem;
+    color: var(--cor-texto-secundario); /* CRP final em #333 */
+}
+
+/* === ESTILOS PARA VALIDAÇÃO DE FORMULÁRIO === */
+.form-group .error-message {
+    color: var(--cor-erro);
+    font-size: 0.85rem;
+    margin-top: 0.3rem;
+    display: block; /* Para ocupar espaço apenas quando houver erro */
+    height: 1em; /* Reserva espaço para a mensagem não empurrar o layout */
+    visibility: hidden; /* Esconde por padrão */
+}
+
+.form-group .error-message.visible {
+    visibility: visible; /* Torna visível quando tem erro */
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: var(--cor-erro);
+    box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.2); /* Sombra vermelha suave no erro */
+}
+
+
+/* FOOTER REDESENHADO - COM GRADIENTE E TEXTO CONTRASTANTE */
+footer.main-footer {
+    background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-secundaria-darker)); /* Gradiente */
+    color: #f0f0f0; /* Texto claro padrão para o footer */
+    text-align: center;
+    padding: 3rem 1.5rem 1.5rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+.footer-info {
+    flex-grow: 1;
+    min-width: 250px;
+}
+
+.footer-info h3 {
+    color: var(--cor-branco); /* Título do footer em branco */
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    position: relative;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--cor-destaque); /* Linha de destaque em Dourado/Rosé */
+    display: inline-block;
+}
+
+.footer-info p {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #e0e0e0; /* Texto claro no footer */
+}
+
+.footer-info a {
+    color: #e0e0e0; /* Links claros no footer */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-info a:hover {
+    color: var(--cor-destaque); /* Hover em Dourado/Rosé */
+}
+
+.footer-social {
+    text-align: left;
+    flex-grow: 1;
+    min-width: 150px;
+}
+
+.footer-social h4 {
+    color: var(--cor-branco); /* Título social em branco */
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer-social .social-links-footer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+}
+
+.footer-social .social-links-footer a {
+    color: var(--cor-branco);
+    font-size: 2rem;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-social .social-links-footer a:hover {
+    color: var(--cor-destaque); /* Hover em Dourado/Rosé */
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    padding-top: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+.footer-bottom p {
+    font-size: 0.85rem;
+    color: #cccccc; /* Texto inferior claro */
+    opacity: 0.8;
+    margin: 0.3rem 0;
+}
+
+.ethics-notice {
+    font-style: italic;
+    opacity: 0.7;
+}
+
+
+/* BOTÃO VOLTAR AO TOPO */
+.back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--cor-primaria); /* Botão em Blush/Rosé */
+    color: var(--cor-branco);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(217, 184, 172, 0.2);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top-btn:hover {
+    background-color: var(--cor-secundaria); /* Hover em Cinza-Taupe */
+    color: var(--cor-branco);
+    transform: scale(1.1);
+}
+
+.back-to-top-btn.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* PÁGINA DE OBRIGADO */
+.thank-you-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    text-align: center;
+    background-color: var(--cor-fundo);
+}
+
+.thank-you-box {
+    background-color: var(--cor-branco);
+    padding: 4rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px var(--cor-sombra);
+}
+
+.thank-you-box h1 {
+    font-size: 3rem;
+    color: var(--cor-texto-principal); /* Título em preto #222 */
+}
+
+.thank-you-box p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: var(--cor-texto-secundario); /* Parágrafo em #333 */
+}
+
+/* ANIMAÇÕES GERAIS */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.fade-in-up.animated {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.slide-in-right.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+.slide-in-left.animated {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* === ESTILOS PARA PÁGINA DE CARREIRA === */
+
+.page-hero {
+    background: linear-gradient(rgba(51, 51, 51, 0.92), rgba(51, 51, 51, 0.92)), url('imagens/fundo-ajuda.jpg'); /* Fundo escuro em cinza */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 35vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: var(--cor-branco);
+}
+
+.page-hero h1 {
+    color: var(--cor-branco); /* H1 do Hero continua branco */
+    font-size: 3.5rem;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.career-container {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: flex-start;
+    gap: 4rem;
+    flex-wrap: wrap;
+}
+
+.career-text {
+    flex: 2;
+    min-width: 300px;
+}
+
+.career-text h2 {
+    text-align: left;
+    font-size: 2.5rem;
+    color: var(--cor-texto-principal); /* H2 da carreira em preto #222 */
+}
+
+.career-text h2::after {
+    margin-left: 0;
+}
+
+/* Títulos da carreira em Blush/Rosé */
+.career-text h3 {
+    font-size: 1.7rem;
+    color: var(--cor-primaria); /* Títulos de subseção em Blush/Rosé */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.career-text ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+}
+
+.career-text ul li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+    color: var(--cor-texto-secundario); /* Texto da lista em #333 */
+}
+
+/* Ícones de check em Blush/Rosé */
+.career-text ul li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--cor-primaria);
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.career-image {
+    flex: 1;
+    min-width: 280px;
+    text-align: center;
+    /* position: sticky; */ /* Removido para simplificar layout com dois carrosséis */
+    /* top: 120px; */
+}
+
+.career-image > img { /* Seleciona apenas a imagem principal (se houver) */
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px var(--cor-sombra);
+    margin-bottom: 2rem; /* Adiciona espaço se houver imagem estática */
+}
+
+/* === CARROSSEL COM CONTROLES === */
+.slider-container {
+    width: 100%;
+    max-width: 350px;
+    aspect-ratio: 1 / 1.2;
+    margin: 0 auto; /* Centraliza o carrossel na coluna */
+    /* margin: 2rem auto 0; */ /* Removido margin-top padrão */
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 12px 30px var(--cor-sombra);
+    position: relative; /* Necessário para posicionar as setas */
+}
+
+/* Adiciona margem entre os carrosséis na página de carreira */
+.career-image .slider-container + .slider-container {
+    margin-top: 2rem;
+}
+
+
+.slider {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    flex-shrink: 0;
+    position: absolute;
+    top: 0; /* Garante alinhamento */
+    left: 0; /* Garante alinhamento */
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out; /* Transição suave de fade */
+    z-index: 1; /* Slide inativo fica atrás */
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 2; /* Slide ativo fica na frente */
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Estilos das Setas */
+.slider-container .prev,
+.slider-container .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(217, 184, 172, 0.6); /* Fundo Blush/Rosé semi-transparente */
+    color: var(--cor-branco);
+    border: none;
+    padding: 0.8rem;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 3; /* Acima dos slides */
+    font-size: 1.2rem;
+    line-height: 1; /* Remove altura extra */
+    display: flex; /* Para centralizar o ícone */
+    align-items: center;
+    justify-content: center;
+    width: 40px; /* Largura fixa */
+    height: 40px; /* Altura fixa */
+    transition: background-color 0.3s ease;
+}
+
+.slider-container .prev {
+    left: 10px;
+}
+
+.slider-container .next {
+    right: 10px;
+}
+
+.slider-container .prev:hover,
+.slider-container .next:hover {
+    background-color: rgba(217, 184, 172, 0.9); /* Mais opaco no hover */
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 992px) {
+    .container {
+        padding: 0 1rem;
+    }
+    .sobre-container,
+    .abordagem-tcc-content,
+    .ajuda-container,
+    .career-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ajuda-container {
+        flex-direction: column-reverse;
+    }
+
+    .abordagem-tdah-content {
+        display: flex;
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .sobre-texto h2,
+    .abordagem-texto h3,
+    .career-text h2 {
+        text-align: center;
+    }
+
+    .career-text h2::after {
+        margin-left: auto;
+    }
+
+    .abordagem-texto ul,
+    .ajuda-texto ul,
+    .career-text ul {
+        text-align: left;
+        display: inline-block;
+    }
+
+    .sobre-imagem, .abordagem-imagem {
+        margin-bottom: 2rem;
+    }
+
+    .career-image {
+        position: static; /* Remove sticky no mobile/tablet */
+        margin-bottom: 2rem; /* Adiciona espaço abaixo dos carrosséis */
+    }
+
+    .ajuda-fotos {
+        margin-top: 0;
+        margin-bottom: 3rem;
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+    .ajuda-foto:first-child {
+        max-height: 400px;
+    }
+    .ajuda-foto:nth-child(2) {
+        max-height: 300px;
+    }
+
+    .hero h1 {
+        font-size: 3.5rem;
+    }
+    .hero-profile-pic {
+        width: 160px;
+        height: 160px;
+    }
+    .hero .subtitle {
+        font-size: 1.4rem;
+    }
+    .page-hero h1 {
+        font-size: 2.8rem;
+    }
+    h2 {
+        font-size: 2.2rem;
+    }
+    .cta-button, .button-secondary {
+        padding: 0.9rem 2rem;
+        font-size: 1.05rem;
+    }
+    .sobre-imagem img {
+        max-width: 280px;
+    }
+    .contato-form {
+        padding: 1.8rem;
+    }
+    .faq-pergunta {
+        padding: 1.4rem 1.6rem;
+    }
+    .faq-resposta-content { /* Ajusta padding da resposta no mobile */
+        padding: 1.2rem 1.6rem;
+    }
+    .footer-content, .footer-social .social-links-footer {
+        justify-content: center;
+        text-align: center;
+    }
+     .footer-info, .footer-social { /* Centraliza no tablet também */
+        text-align: center;
+        width: 100%;
+    }
+     .footer-info h3 {
+        display: inline-block; /* Mantém a borda centralizada */
+    }
+}
+
+
+@media (max-width: 768px) {
+    .navbar .container {
+        justify-content: center;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+    }
+    .nav-menu a {
+        font-size: 0.95rem;
+    }
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    .hero-profile-pic {
+        width: 140px;
+        height: 140px;
+    }
+    .hero .subtitle {
+        font-size: 1.2rem;
+    }
+    .page-hero h1 {
+        font-size: 2.2rem;
+    }
+    section {
+        padding: 3.5rem 0;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .cta-button, .button-secondary {
+        padding: 0.9rem 2rem;
+        font-size: 1.05rem;
+    }
+    .sobre-imagem img {
+        max-width: 280px;
+    }
+    .contato-form {
+        padding: 1.8rem;
+    }
+    .faq-pergunta {
+        padding: 1.4rem 1.6rem;
+    }
+    .faq-resposta-content { /* Ajusta padding da resposta no mobile */
+        padding: 1.2rem 1.6rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 2rem;
+    }
+    .footer-info, .footer-social {
+        text-align: center;
+        width: 100%;
+    }
+    /* Ajuste para ícones sociais no Hero em telas muito pequenas */
+    .hero-social-links a {
+        font-size: 1.8rem; /* Reduz um pouco mais */
+    }
+    /* Setas do carrossel menores no mobile */
+    .slider-container .prev,
+    .slider-container .next {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+        padding: 0.6rem;
+    }
+}
