@@ -167,6 +167,38 @@
         font-size: 0.9rem;
       }
 
+      /* AJUSTES PARA MOBILE (A MÁGICA ACONTECE AQUI) */
+      @media (max-width: 768px) {
+        .cartao-curriculo {
+          flex-direction: column;
+          margin: 0;
+          border-radius: 0;
+          min-height: auto;
+        }
+        .barra-lateral {
+          width: 100%;
+          padding: 30px 20px;
+          text-align: center;
+        }
+        .lista-competencias li {
+          text-align: left; /* Mantém a lista alinhada à esquerda mesmo com a coluna centralizada */
+          display: inline-block;
+          width: 100%;
+        }
+        .conteudo-principal {
+          width: 100%;
+          padding: 30px 20px;
+        }
+        .cabecalho-nome h1 {
+          font-size: 2rem;
+          text-align: center;
+        }
+        .cargo-titulo {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+      }
+
       /* AJUSTES PARA IMPRESSÃO */
       @media print {
         @page {
