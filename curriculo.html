@@ -167,7 +167,7 @@
         font-size: 0.9rem;
       }
 
-      /* AJUSTES PARA MOBILE (A MÁGICA ACONTECE AQUI) */
+      /* AJUSTES PARA MOBILE */
       @media (max-width: 768px) {
         .cartao-curriculo {
           flex-direction: column;
@@ -181,7 +181,7 @@
           text-align: center;
         }
         .lista-competencias li {
-          text-align: left; /* Mantém a lista alinhada à esquerda mesmo com a coluna centralizada */
+          text-align: left;
           display: inline-block;
           width: 100%;
         }
@@ -199,28 +199,78 @@
         }
       }
 
-      /* AJUSTES PARA IMPRESSÃO */
+      /* =======================================================
+         AJUSTES PARA IMPRESSÃO EM PDF (A4 - 1 PÁGINA PERFEITA)
+         ======================================================= */
       @media print {
         @page {
           size: A4;
-          margin: 0;
+          margin: 0; /* Remove margens brancas nativas do navegador */
         }
+
         body {
           background: white;
+          margin: 0;
+          padding: 0;
         }
+
         .cartao-curriculo {
           margin: 0;
           box-shadow: none;
-          width: 100%;
-          height: 100vh;
+          width: 210mm; /* Largura exata do A4 */
+          height: 297mm; /* Altura exata do A4 */
+          min-height: 297mm;
           border-radius: 0;
+          display: flex !important;
+          flex-direction: row !important; /* Força manter lado a lado na impressão */
+          overflow: hidden;
         }
+
         .barra-lateral {
+          width: 32% !important;
+          padding: 25px 20px !important;
           background-color: var(--cor-primaria) !important;
-          -webkit-print-color-adjust: exact;
+          color: white !important;
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
+        }
+
+        .conteudo-principal {
+          width: 68% !important;
+          padding: 35px 40px !important;
+        }
+
+        /* Ajustes finos verticais para não vazar a folha */
+        .foto-perfil {
+          width: 140px;
+          height: 140px;
+          margin-bottom: 15px;
+        }
+        .secao-lateral {
+          margin-bottom: 15px;
+        }
+        .resumo-texto {
+          margin-top: 10px;
+          font-size: 0.9rem;
+        }
+        h3 {
+          margin-top: 15px;
+          margin-bottom: 10px;
+        }
+        .item-experiencia {
+          margin-bottom: 12px;
+        }
+        .caixa-destaque {
+          padding: 10px 12px;
+          margin-top: 8px;
+        }
+        * {
+          -webkit-print-color-adjust: exact !important;
+          print-color-adjust: exact !important;
         }
       }
     </style>
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <div class="cartao-curriculo">
@@ -235,9 +285,9 @@
           <div class="titulo-lateral">Contato</div>
           <div class="info-contato">
             <p>📍 Araguari - MG<br />(Disponibilidade Uberlândia)</p>
-            <p>📞 (34) XXXXX-XXXX</p>
-            <p>📧 vanessa.rodrigues@email.com</p>
-            <p>🌐 linkedin.com/in/vanessapsi</p>
+            <p>📞 (34)98894-0738</p>
+            <p>📧 vanessaroo1.vr@gmail.com</p>
+            <p>🌐 /www.linkedin.com/in/vanessa-alves-psic/</p>
           </div>
         </div>
 
@@ -246,19 +296,11 @@
           <ul class="lista-competencias">
             <li>Terapia Cognitivo-Comportamental</li>
             <li>Avaliação Psicológica</li>
-            <li>Psicopatologia Clínica</li>
+            <li>Sexólogia</li>
             <li>Atendimento Online e Presencial</li>
             <li>Manejo de Prontuários (PEP)</li>
             <li>Ética e Sigilo Profissional</li>
             <li>Escuta Analítica e Qualificada</li>
-          </ul>
-        </div>
-
-        <div class="secao-lateral">
-          <div class="titulo-lateral">Idiomas</div>
-          <ul class="lista-competencias">
-            <li>Português (Nativo)</li>
-            <li>Inglês (Básico)</li>
           </ul>
         </div>
       </aside>
