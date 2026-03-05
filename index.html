@@ -36,6 +36,8 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
     <header class="navbar">
@@ -500,21 +502,7 @@
           <div class="contato-form">
             <h3>Ou, se preferir, envie uma mensagem:</h3>
 
-            <form
-              id="contact-form"
-              action="https://formsubmit.co/vanessaroo1.vr@gmail.com"
-              method="POST"
-            >
-              <input
-                type="hidden"
-                name="_subject"
-                value="Novo Contato do Site de Vanessa Alves"
-              />
-              <input
-                type="hidden"
-                name="_next"
-                value="https://psialvesvanessa.com.br/obrigado.html"
-              />
+            <form id="contact-form" novalidate>
               <div class="form-group">
                 <label for="nome">Nome Completo:</label>
                 <input
@@ -558,9 +546,36 @@
                 ></textarea>
                 <span class="error-message" id="mensagem-error"></span>
               </div>
-              <button type="submit" class="cta-button">Enviar Mensagem</button>
+              <button type="submit" class="cta-button" id="btn-enviar">
+                <span id="btn-texto">Enviar Mensagem</span>
+              </button>
             </form>
-            <p class="form-security-text">
+
+            <div
+              id="msg-sucesso"
+              style="
+                display: none;
+                color: #2ecc71;
+                margin-top: 15px;
+                font-weight: 600;
+              "
+            >
+              Mensagem enviada com sucesso! A Vanessa entrará em contato em
+              breve.
+            </div>
+            <div
+              id="msg-erro"
+              style="
+                display: none;
+                color: #e74c3c;
+                margin-top: 15px;
+                font-weight: 600;
+              "
+            >
+              Ocorreu um erro ao enviar. Por favor, tente pelo WhatsApp.
+            </div>
+
+            <p class="form-security-text" style="margin-top: 20px">
               <i class="fas fa-lock"></i> Seus dados são confidenciais e
               utilizados apenas para retorno do contato.
             </p>
@@ -612,7 +627,7 @@
         </div>
         <div class="footer-bottom">
           <p>
-            &copy; 2025 Vanessa Rodrigues Alves. Todos os direitos reservados. |
+            &copy; 2026 Vanessa Rodrigues Alves. Todos os direitos reservados. |
             Desenvolvido por ROGÉLIO CLARO
           </p>
           <p class="ethics-notice">
@@ -628,5 +643,73 @@
     ></a>
 
     <script src="scripts.js"></script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        emailjs.init("8cxTYRk_BBQCt-q1D");
+
+        const form = document.getElementById("contact-form");
+        const btnEnviar = document.getElementById("btn-enviar");
+        const btnTexto = document.getElementById("btn-texto");
+        const msgSucesso = document.getElementById("msg-sucesso");
+        const msgErro = document.getElementById("msg-erro");
+
+        if (form) {
+          form.addEventListener("submit", async function (event) {
+            event.preventDefault();
+
+            // Esconde as mensagens
+            msgSucesso.style.display = "none";
+            msgErro.style.display = "none";
+
+            // Coleta os valores
+            const nome = document.getElementById("nome").value.trim();
+            const email = document.getElementById("email").value.trim();
+            const telefone = document.getElementById("telefone").value.trim();
+            const mensagem = document.getElementById("mensagem").value.trim();
+
+            if (!nome || !email || !mensagem) {
+              return; // HTML5 já bloqueia vazio, mas garante a segurança
+            }
+
+            // Altera estado do botão
+            btnEnviar.disabled = true;
+            btnTexto.innerText = "Enviando...";
+
+            try {
+              // Os nomes precisam estar EXATAMENTE como no seu template do EmailJS
+              const templateParams = {
+                from_name: nome,
+                from_email: email,
+                phone: telefone,
+                message: mensagem,
+              };
+
+              // Dispara o email usando os IDs que você enviou
+              await emailjs.send(
+                "service_3ic9m4o",
+                "template_fkaey16",
+                templateParams,
+              );
+
+              // Reseta formulário e avisa sucesso
+              form.reset();
+              msgSucesso.style.display = "block";
+            } catch (error) {
+              console.error("Erro ao enviar contato da Vanessa:", error);
+              msgErro.style.display = "block";
+            } finally {
+              // Restaura o botão
+              btnEnviar.disabled = false;
+              btnTexto.innerText = "Enviar Mensagem";
+            }
+          });
+        }
+      });
+    </script>
   </body>
 </html>
