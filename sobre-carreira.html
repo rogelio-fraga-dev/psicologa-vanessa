@@ -7,7 +7,7 @@
 
     <meta
       name="description"
-      content="Conheça a trajetória profissional e acadêmica da Psicóloga Vanessa Alves."
+      content="Conheça a trajetória da Psicóloga Vanessa Alves. Especialista em saúde mental de mulheres, mulheres pretas, meninas e adolescentes."
     />
 
     <link rel="icon" type="image/png" href="favicon.png" />
@@ -25,6 +25,24 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
       rel="stylesheet"
     />
+
+    <script defer src="/_vercel/insights/script.js"></script>
+
+    <style>
+      .mobile-slider-wrap {
+        display: none;
+        width: 100%;
+        margin: 2.5rem auto;
+      }
+      @media (max-width: 992px) {
+        .desktop-image-column {
+          display: none !important;
+        }
+        .mobile-slider-wrap {
+          display: block;
+        }
+      }
+    </style>
   </head>
   <body>
     <header class="navbar">
@@ -32,6 +50,11 @@
         <nav>
           <ul class="nav-menu">
             <li><a href="index.html#sobre">Sobre Mim</a></li>
+            <li>
+              <a href="sobre-carreira.html" class="active-link"
+                >Minha Trajetória</a
+              >
+            </li>
             <li><a href="index.html#abordagem">Abordagem</a></li>
             <li><a href="index.html#ajuda">Como Posso Ajudar?</a></li>
             <li><a href="index.html#como-funciona">Como Funciona?</a></li>
@@ -51,7 +74,7 @@
 
       <section id="carreira" class="section-padding">
         <div class="container career-container">
-          <div class="career-image fade-in">
+          <div class="career-image desktop-image-column fade-in">
             <div class="slider-container graduation-slider">
               <div class="slider">
                 <div class="slide active">
@@ -117,25 +140,70 @@
               transformo essa vivência em escuta, acolhimento e posicionamento
               profissional.
             </p>
+
+            <div class="mobile-slider-wrap">
+              <div class="slider-container graduation-slider">
+                <div class="slider">
+                  <div class="slide active">
+                    <img
+                      src="imagens/Formatura1.jpg"
+                      alt="Foto de formatura 1"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="imagens/Formatura2.jpg"
+                      alt="Foto de formatura 2"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="imagens/Formatura3.jpg"
+                      alt="Foto de formatura 3"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="imagens/Formatura4.jpg"
+                      alt="Foto de formatura 4"
+                    />
+                  </div>
+                </div>
+                <button class="prev">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="next">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+
             <p>
               Minha trajetória não foi fácil. Morei a 50 km da faculdade e, por
               anos, enfrentei a rotina diária de ônibus para não abrir mão do
               meu sonho. Em muitos momentos, fui a única mulher negra em
-              determinados espaços acadêmicos, e isso me ensinou sobre
+              determinados espaços acadêmicos, e isso me ensinou muito sobre
               resistência, identidade e pertencimento. Cada obstáculo fortaleceu
               minha convicção de que eu estava no caminho certo.
             </p>
             <p>
-              Hoje, atuo na clínica com responsabilidade, estratégia e
-              sensibilidade — unindo técnica e humanidade.
+              Hoje, dedico minha prática clínica
+              <strong>exclusivamente ao público feminino</strong>. Sou
+              especialista no atendimento de mulheres, mulheres pretas, meninas
+              e adolescentes. Entendo profundamente as pressões estéticas,
+              profissionais, raciais e a sobrecarga mental que atravessam as
+              nossas vivências. Meu propósito é atuar com responsabilidade,
+              estratégia e sensibilidade — unindo técnica e humanidade para
+              acolher a dor e despertar a potência de cada mulher que passa pelo
+              meu consultório.
             </p>
 
             <h3>Formação Acadêmica</h3>
             <p>
               Sou graduada em Psicologia pelo
               <strong>Centro Universitário UNA Uberlândia</strong>. Durante a
-              graduação, aprofundei meus estudos sobre comportamento humano,
-              saúde mental e práticas clínicas baseadas em evidências.
+              graduação, aprofundei meus estudos sobre o comportamento humano,
+              saúde mental feminina e práticas clínicas baseadas em evidências.
             </p>
             <p>
               Minha formação foi construída com disciplina e compromisso, sempre
@@ -145,60 +213,111 @@
             <p>
               Também possuo formação em <strong>Sexologia</strong> pela
               Faculdade Estácio, ampliando meu olhar para questões relacionadas
-              à sexualidade, relacionamentos e identidade — temas que atravessam
-              a experiência humana e impactam diretamente a saúde emocional.
+              à sexualidade, intimidade, relacionamentos e identidade — temas
+              fundamentais que impactam diretamente a autoestima e a saúde
+              emocional da mulher.
             </p>
+
+            <div class="mobile-slider-wrap">
+              <div class="slider-container professional-slider">
+                <div class="slider">
+                  <div class="slide active">
+                    <img
+                      src="imagens/Profissional1.jpg"
+                      alt="Foto profissional 1"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="imagens/Profissional2.jpg"
+                      alt="Foto profissional 2"
+                    />
+                  </div>
+                  <div class="slide">
+                    <img
+                      src="imagens/Profissional3.jpg"
+                      alt="Foto profissional 3"
+                    />
+                  </div>
+                </div>
+                <button class="prev">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="next">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
 
             <h3>Experiência Profissional</h3>
             <p>
               Já atuei no serviço público em 2024, experiência que fortaleceu
               minha compreensão sobre políticas públicas e saúde mental na
-              prática. Esse contato ampliou minha visão sobre as diferentes
-              realidades sociais e reforçou meu compromisso com uma Psicologia
-              acessível e responsável.
+              prática. Esse contato direto com as dores da sociedade ampliou
+              minha visão sobre as diferentes realidades e reforçou meu
+              compromisso com uma Psicologia acessível, transformadora e
+              responsável.
             </p>
 
-            <h3>Áreas de Atuação e Aperfeiçoamento</h3>
+            <h3>Áreas de Especialidade</h3>
             <p>
-              Acredito que a Psicologia exige atualização constante. Meu foco
-              clínico está em:
+              Acredito que a Psicologia exige dedicação e atualização constante.
+              Meu foco clínico é especializado em:
             </p>
             <ul>
-              <li>Ansiedade</li>
-              <li>Autoestima</li>
-              <li>Relacionamentos</li>
-              <li>Desenvolvimento emocional</li>
-              <li>Terapia Cognitivo-Comportamental (TCC)</li>
-              <li>Saúde mental da mulher</li>
+              <li>Saúde mental exclusiva para o público feminino</li>
+              <li>TDAH em meninas e mulheres (diagnóstico tardio e manejo)</li>
+              <li>Autoestima, autoimagem e identidade da mulher preta</li>
+              <li>Ansiedade e alívio da sobrecarga mental feminina</li>
+              <li>
+                Desenvolvimento emocional e imposição de limites saudáveis
+              </li>
+              <li>Relacionamentos, dependência emocional e sexualidade</li>
             </ul>
             <p>
-              Busco sempre aprofundamento técnico para oferecer intervenções
-              baseadas em evidências, especialmente dentro da abordagem
-              cognitivo-comportamental.
+              Busco sempre o aprofundamento técnico para oferecer intervenções
+              precisas e baseadas em evidências, sustentadas pela solidez da
+              Terapia Cognitivo-Comportamental (TCC).
             </p>
 
             <h3>Filosofia de Trabalho</h3>
             <p>
               Meu compromisso é criar um espaço terapêutico seguro, ético e
-              acolhedor — onde você possa ser quem é, sem precisar se diminuir
-              ou se explicar o tempo todo.
+              acolhedor — onde você possa ser exatamente quem é, sem precisar se
+              diminuir ou se justificar o tempo todo.
             </p>
             <p>
-              Acredito em uma clínica estratégica, mas também humana. Técnica
-              sem acolhimento não transforma. Acolhimento sem técnica não
-              sustenta.
+              Acredito em uma clínica que é estratégica, mas profundamente
+              humana. A técnica sem acolhimento não transforma, e o acolhimento
+              sem a técnica não sustenta a melhora.
             </p>
             <p>
-              Aqui, você encontra escuta qualificada, direcionamento e um
-              processo terapêutico construído com responsabilidade e respeito à
-              sua história. 🌿
+              Aqui, você encontra escuta qualificada, direcionamento claro e um
+              processo terapêutico construído com total respeito à sua história.
+              🌿
             </p>
 
-            <div style="margin-top: 2.5rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-    <a href="index.html#contato" class="cta-button" style="margin: 0; text-align: center;">Agende sua Conversa</a>
-    <a href="documentos/diploma-vanessa-alves.pdf" target="_blank" rel="noopener noreferrer" class="button-secondary" style="margin: 0; text-align: center;">Ver Diploma</a>
-    <a href="curriculo.html" target="_blank" rel="noopener noreferrer" class="button-secondary" style="margin: 0; text-align: center;">Acessar Currículo</a>
-</div>
+            <div class="button-group">
+              <a href="index.html#contato" class="cta-button"
+                >Agende sua Conversa</a
+              >
+              <a
+                href="documentos/diploma-vanessa-alves.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button-secondary"
+                >Ver Diploma</a
+              >
+              <a
+                href="curriculo.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="button-secondary"
+                >Acessar Currículo</a
+              >
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
@@ -241,7 +360,7 @@
         </div>
         <div class="footer-bottom">
           <p>
-            &copy; 2025 Vanessa Rodrigues Alves. Todos os direitos reservados. |
+            &copy; 2026 Vanessa Rodrigues Alves. Todos os direitos reservados. |
             Desenvolvido por ROGÉLIO CLARO
           </p>
           <p class="ethics-notice">

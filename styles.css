@@ -119,36 +119,39 @@ p {
   text-align: center;
 }
 
+/* GRUPO DE BOTÕES - ALINHAMENTO E SIMETRIA */
+.button-group {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
 /* BOTÕES GERAIS - COM GRADIENTE E CONTRASTE */
 .cta-button {
   display: inline-block;
-  /* background-color: var(--cor-primaria); */ /* Removido */
   background-image: linear-gradient(
     to right,
     var(--cor-primaria) 0%,
     #c0a397 100%
-  ); /* Gradiente Blush/Rosé */
-  color: var(--cor-texto-principal); /* Texto em preto #222 */
+  );
+  color: var(--cor-texto-principal);
   padding: 1.1rem 2.8rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: none; /* Removida borda sólida */
-  /* border: 2px solid var(--cor-primaria); */ /* Se preferir manter a borda */
+  border: none;
   cursor: pointer;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
-  box-shadow: 0 5px 15px rgba(217, 184, 172, 0.3); /* Sombra um pouco mais forte */
+  box-shadow: 0 5px 15px rgba(217, 184, 172, 0.3);
+  text-align: center;
 }
 
 .cta-button:hover {
-  background-image: linear-gradient(
-    to right,
-    #c0a397 0%,
-    #b38f82 100%
-  ); /* Gradiente mais escuro no hover */
-  /* border-color: #c0a397; */
+  background-image: linear-gradient(to right, #c0a397 0%, #b38f82 100%);
   color: var(--cor-texto-principal);
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(217, 184, 172, 0.4);
@@ -157,25 +160,23 @@ p {
 /* Botão secundário em Cinza-Taupe com gradiente */
 .button-secondary {
   display: inline-block;
-  /* background-color: var(--cor-secundaria); */ /* Removido */
   background-image: linear-gradient(
     to right,
     var(--cor-secundaria) 0%,
     var(--cor-secundaria-darker) 100%
-  ); /* Gradiente Cinza-Taupe */
-  color: var(--cor-texto-principal); /* Texto em preto #222 */
+  );
+  color: var(--cor-texto-principal);
   padding: 1.1rem 2.8rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
   transition: all 0.3s ease;
-  border: none; /* Removida borda sólida */
-  /* border: 2px solid var(--cor-secundaria); */ /* Se preferir manter a borda */
+  border: none;
   cursor: pointer;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
   box-shadow: 0 5px 15px var(--cor-sombra);
-  margin-top: 1rem;
+  text-align: center;
 }
 
 .button-secondary:hover {
@@ -183,8 +184,7 @@ p {
     to right,
     var(--cor-secundaria-darker) 0%,
     #6f6f6f 100%
-  ); /* Gradiente mais escuro no hover */
-  /* border-color: #a0a0a0; */
+  );
   color: var(--cor-texto-principal);
   transform: translateY(-4px);
   box-shadow: 0 10px 20px rgba(140, 140, 140, 0.2);
@@ -201,7 +201,7 @@ p {
     box-shadow:
       0 5px 15px rgba(217, 184, 172, 0.3),
       0 0 0 0 rgba(217, 184, 172, 0.4);
-  } /* Combina sombra normal e pulse */
+  }
   70% {
     transform: scale(1.03);
     box-shadow:
@@ -242,7 +242,7 @@ p {
 
 .nav-menu a {
   text-decoration: none;
-  color: var(--cor-texto-secundario); /* Links de navegação em #333 */
+  color: var(--cor-texto-secundario);
   font-weight: 500;
   transition:
     color 0.3s ease,
@@ -252,7 +252,7 @@ p {
 }
 
 .nav-menu a:hover {
-  color: var(--cor-primaria); /* Hover em Blush/Rosé */
+  color: var(--cor-primaria);
 }
 
 .nav-menu a.active-link {
@@ -261,7 +261,7 @@ p {
   border-bottom-color: var(--cor-primaria);
 }
 
-/* SEÇÃO INICIAL (HERO) - Ajuste no blur do fundo */
+/* SEÇÃO INICIAL (HERO) */
 .hero {
   background: url("imagens/fundo-hero.jpg");
   background-size: cover;
@@ -291,7 +291,6 @@ p {
   transition: filter 0.5s ease;
 }
 
-/* Imagem de perfil maior */
 .hero-profile-pic {
   width: 200px;
   height: 200px;
@@ -306,30 +305,29 @@ p {
 .hero h1 {
   font-size: 4.5rem;
   margin-bottom: 1.5rem;
-  color: var(--cor-branco); /* Título H1 do Hero continua branco */
+  color: var(--cor-branco);
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
   z-index: 2;
 }
 
 .hero .subtitle {
   font-size: 1.8rem;
-  color: var(--cor-branco); /* Subtítulo do Hero continua branco */
+  color: var(--cor-branco);
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
   z-index: 2;
 }
 
-/* ÍCONES SOCIAIS NO HERO */
 .hero-social-links {
-  margin-top: 2rem; /* Espaçamento abaixo do botão CTA */
+  margin-top: 2rem;
   display: flex;
   justify-content: center;
-  gap: 2rem; /* Espaço entre os ícones */
-  z-index: 2; /* Garante que fiquem acima do overlay */
+  gap: 2rem;
+  z-index: 2;
 }
 
 .hero-social-links a {
-  color: var(--cor-branco); /* Cor branca para visibilidade */
-  font-size: 2.2rem; /* Tamanho dos ícones */
+  color: var(--cor-branco);
+  font-size: 2.2rem;
   transition:
     color 0.3s ease,
     transform 0.3s ease;
@@ -337,8 +335,8 @@ p {
 }
 
 .hero-social-links a:hover {
-  color: var(--cor-primaria); /* Muda para Blush/Rosé no hover */
-  transform: scale(1.1); /* Efeito de zoom suave */
+  color: var(--cor-primaria);
+  transform: scale(1.1);
 }
 
 /* SEÇÃO SOBRE */
@@ -371,7 +369,7 @@ p {
 
 .sobre-texto h2 {
   text-align: left;
-  color: var(--cor-texto-principal); /* H2 no sobre em preto #222 */
+  color: var(--cor-texto-principal);
 }
 
 .sobre-texto h2::after {
@@ -384,7 +382,7 @@ p {
 }
 
 .social-links a {
-  color: var(--cor-secundaria); /* Ícones sociais em Cinza-Taupe */
+  color: var(--cor-secundaria);
   font-size: 2rem;
   margin-right: 1.5rem;
   transition:
@@ -393,7 +391,7 @@ p {
 }
 
 .social-links a:hover {
-  color: var(--cor-primaria); /* Hover em Blush/Rosé */
+  color: var(--cor-primaria);
   transform: scale(1.1);
 }
 
@@ -427,11 +425,11 @@ p {
 .abordagem-texto ul li {
   margin-bottom: 0.8rem;
   font-size: 1.15rem;
-  color: var(--cor-texto-secundario); /* Texto da lista em #333 */
+  color: var(--cor-texto-secundario);
 }
 
 .abordagem-texto ul li i {
-  color: var(--cor-primaria); /* Ícones em Blush/Rosé */
+  color: var(--cor-primaria);
   margin-right: 12px;
   font-size: 1.3rem;
 }
@@ -461,18 +459,17 @@ p {
   background-position: center;
   background-attachment: fixed;
   position: relative;
-  color: var(--cor-branco); /* Garante que o texto padrão seja branco */
+  color: var(--cor-branco);
 }
 
 #ajuda h2 {
-  color: var(--cor-branco); /* H2 continua branco aqui */
+  color: var(--cor-branco);
 }
 
 #ajuda h2::after {
-  background-color: var(--cor-destaque); /* Linha de destaque em Dourado/Rosé */
+  background-color: var(--cor-destaque);
 }
 
-/* LAYOUT ATUALIZADO (FOTOS MAIORES) */
 .ajuda-container {
   display: flex;
   align-items: center;
@@ -485,10 +482,9 @@ p {
   min-width: 300px;
 }
 
-/* CORRIGIDO: Garante que o parágrafo principal também seja branco */
 #ajuda .ajuda-texto p {
   color: var(--cor-branco);
-  font-weight: 300; /* Pode deixar mais leve se necessário */
+  font-weight: 300;
 }
 
 .ajuda-texto ul {
@@ -498,18 +494,17 @@ p {
   margin-bottom: 1.5rem;
 }
 
-/* CORRIGIDO E REFORÇADO: Texto da lista branco e mais destacado */
 #ajuda .ajuda-texto ul li {
   margin-bottom: 1rem;
   font-size: 1.1rem;
-  color: var(--cor-branco); /* GARANTIDO BRANCO */
-  font-weight: 400; /* MAIS PESO */
+  color: var(--cor-branco);
+  font-weight: 400;
   display: flex;
   align-items: flex-start;
 }
 
 #ajuda .ajuda-texto ul li i {
-  color: var(--cor-destaque); /* Ícones em Dourado/Rosé */
+  color: var(--cor-destaque);
   margin-right: 15px;
   font-size: 1.2rem;
   margin-top: 5px;
@@ -536,7 +531,7 @@ p {
   transform: scale(1.05);
 }
 
-/* SEÇÃO COMO FUNCIONA - Ajustes de cor e destaque */
+/* SEÇÃO COMO FUNCIONA */
 .passos-container {
   display: flex;
   justify-content: center;
@@ -557,7 +552,7 @@ p {
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  border-top: 4px solid var(--cor-primaria); /* Borda em Blush/Rosé */
+  border-top: 4px solid var(--cor-primaria);
 }
 
 .passo:hover {
@@ -567,7 +562,7 @@ p {
 
 .icone-passo {
   font-size: 3.5rem;
-  color: var(--cor-primaria); /* Ícones em Blush/Rosé para destaque */
+  color: var(--cor-primaria);
   margin-bottom: 1.8rem;
   text-shadow: 1px 1px 2px var(--cor-sombra-leve);
 }
@@ -575,13 +570,12 @@ p {
 .passo h3 {
   font-size: 1.7rem;
   margin-bottom: 1rem;
-  color: var(--cor-texto-principal); /* H3 dos passos em preto #222 */
+  color: var(--cor-texto-principal);
 }
 
-/* CORRIGIDO: Texto do passo mais escuro */
 .passo p {
   font-size: 1rem;
-  color: var(--cor-texto-principal); /* PARÁGRAFOS DOS PASSOS EM #222 */
+  color: var(--cor-texto-principal);
 }
 
 /* SEÇÃO FAQ */
@@ -607,24 +601,24 @@ p {
   align-items: center;
   background-color: var(--cor-fundo-secao);
   font-weight: 600;
-  color: var(--cor-texto-principal); /* Pergunta em preto #222 */
+  color: var(--cor-texto-principal);
   transition: background-color 0.3s ease;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.05); /* Separador sutil */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .faq-pergunta:hover {
-  background-color: #fcf9f8; /* Leve hover no fundo */
+  background-color: #fcf9f8;
 }
 
 .faq-pergunta h3 {
   margin: 0;
   font-size: 1.25rem;
-  color: var(--cor-texto-principal); /* H3 da pergunta em #222 */
+  color: var(--cor-texto-principal);
 }
 
 .faq-pergunta i {
   transition: transform 0.3s ease;
-  color: var(--cor-primaria); /* Ícone de seta em Blush/Rosé */
+  color: var(--cor-primaria);
   font-size: 1.1rem;
 }
 
@@ -632,19 +626,16 @@ p {
   transform: rotate(180deg);
 }
 
-/* CORREÇÃO DO FAQ - Container interno para padding */
 .faq-resposta {
-  /* padding: 0 2.2rem; */ /* Removido daqui */
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease-out; /* Transiciona apenas a altura */
+  transition: max-height 0.4s ease-out;
   background-color: var(--cor-branco);
 }
 
-/* NOVO: Div interna para aplicar o padding */
 .faq-resposta-content {
-  padding: 1.5rem 2.2rem; /* Padding aplicado aqui */
-  color: var(--cor-texto-secundario); /* Texto da resposta em #333 */
+  padding: 1.5rem 2.2rem;
+  color: var(--cor-texto-secundario);
 }
 
 .faq-resposta-content p {
@@ -653,8 +644,6 @@ p {
 .faq-resposta-content p:last-child {
   margin-bottom: 0;
 }
-
-/* JS ainda controla a classe .open e o style.maxHeight */
 
 /* SEÇÃO CONTATO */
 .contato-info-header {
@@ -668,12 +657,12 @@ p {
 }
 
 .contato-info-header p i {
-  color: var(--cor-primaria); /* Ícones em Blush/Rosé */
+  color: var(--cor-primaria);
   margin-right: 10px;
 }
 
 .contato-info-header .link-contato {
-  color: var(--cor-texto-secundario); /* Links de contato em #333 */
+  color: var(--cor-texto-secundario);
   text-decoration: none;
   transition: color 0.3s ease;
   font-weight: 500;
@@ -691,23 +680,23 @@ p {
   box-shadow: 0 8px 25px var(--cor-sombra);
   max-width: 600px;
   margin: 0 auto 5rem auto;
-  border-top: 5px solid var(--cor-primaria); /* Borda superior em Blush/Rosé */
+  border-top: 5px solid var(--cor-primaria);
 }
 
 .whatsapp-box .fa-whatsapp {
   font-size: 3.5rem;
-  color: #25d366; /* Cor padrão do WhatsApp */
+  color: #25d366;
   margin-bottom: 1rem;
 }
 
 .whatsapp-box h3 {
   font-size: 1.8rem;
-  color: var(--cor-texto-principal); /* Título em preto #222 */
+  color: var(--cor-texto-principal);
   margin-bottom: 0.5rem;
 }
 
 .whatsapp-box p {
-  color: var(--cor-texto-secundario); /* Parágrafo em #333 */
+  color: var(--cor-texto-secundario);
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
 }
@@ -715,7 +704,7 @@ p {
 .whatsapp-box .cta-button {
   background-color: #25d366;
   background-image: linear-gradient(to right, #25d366 0%, #128c7e 100%);
-  color: var(--cor-branco); /* Texto do botão WhatsApp branco */
+  color: var(--cor-branco);
   border: none;
   display: inline-flex;
   align-items: center;
@@ -740,7 +729,7 @@ p {
 .contato-form h3 {
   font-size: 2rem;
   margin-bottom: 2.5rem;
-  color: var(--cor-texto-principal); /* Título do formulário em preto #222 */
+  color: var(--cor-texto-principal);
 }
 
 .form-group {
@@ -752,7 +741,7 @@ p {
   display: block;
   margin-bottom: 0.6rem;
   font-weight: 500;
-  color: var(--cor-texto-principal); /* Labels em preto #222 */
+  color: var(--cor-texto-principal);
   font-size: 1.05rem;
 }
 
@@ -768,12 +757,12 @@ p {
   transition:
     border-color 0.3s ease,
     box-shadow 0.3s ease;
-  color: var(--cor-texto-principal); /* Texto digitado em preto #222 */
+  color: var(--cor-texto-principal);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
-  border-color: var(--cor-primaria); /* Borda de foco em Blush/Rosé */
+  border-color: var(--cor-primaria);
   box-shadow: 0 0 0 4px rgba(217, 184, 172, 0.3);
   outline: none;
 }
@@ -789,7 +778,7 @@ p {
 
 .form-security-text {
   font-size: 0.9rem;
-  color: var(--cor-texto-secundario); /* Texto de segurança em #333 */
+  color: var(--cor-texto-secundario);
   margin-top: 1.5rem;
 }
 .form-security-text i {
@@ -799,37 +788,36 @@ p {
 .crp-final {
   margin-top: 3.5rem;
   font-size: 1rem;
-  color: var(--cor-texto-secundario); /* CRP final em #333 */
+  color: var(--cor-texto-secundario);
 }
 
-/* === ESTILOS PARA VALIDAÇÃO DE FORMULÁRIO === */
 .form-group .error-message {
   color: var(--cor-erro);
   font-size: 0.85rem;
   margin-top: 0.3rem;
-  display: block; /* Para ocupar espaço apenas quando houver erro */
-  height: 1em; /* Reserva espaço para a mensagem não empurrar o layout */
-  visibility: hidden; /* Esconde por padrão */
+  display: block;
+  height: 1em;
+  visibility: hidden;
 }
 
 .form-group .error-message.visible {
-  visibility: visible; /* Torna visível quando tem erro */
+  visibility: visible;
 }
 
 .form-group input.error,
 .form-group textarea.error {
   border-color: var(--cor-erro);
-  box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.2); /* Sombra vermelha suave no erro */
+  box-shadow: 0 0 0 4px rgba(231, 76, 60, 0.2);
 }
 
-/* FOOTER REDESENHADO - COM GRADIENTE E TEXTO CONTRASTANTE */
+/* FOOTER REDESENHADO */
 footer.main-footer {
   background: linear-gradient(
     to bottom,
     var(--cor-secundaria),
     var(--cor-secundaria-darker)
-  ); /* Gradiente */
-  color: #f0f0f0; /* Texto claro padrão para o footer */
+  );
+  color: #f0f0f0;
   text-align: center;
   padding: 3rem 1.5rem 1.5rem;
 }
@@ -853,29 +841,29 @@ footer.main-footer {
 }
 
 .footer-info h3 {
-  color: var(--cor-branco); /* Título do footer em branco */
+  color: var(--cor-branco);
   font-size: 1.5rem;
   margin-bottom: 1rem;
   position: relative;
   padding-bottom: 0.5rem;
-  border-bottom: 2px solid var(--cor-destaque); /* Linha de destaque em Dourado/Rosé */
+  border-bottom: 2px solid var(--cor-destaque);
   display: inline-block;
 }
 
 .footer-info p {
   margin-bottom: 0.5rem;
   font-size: 0.95rem;
-  color: #e0e0e0; /* Texto claro no footer */
+  color: #e0e0e0;
 }
 
 .footer-info a {
-  color: #e0e0e0; /* Links claros no footer */
+  color: #e0e0e0;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .footer-info a:hover {
-  color: var(--cor-destaque); /* Hover em Dourado/Rosé */
+  color: var(--cor-destaque);
 }
 
 .footer-social {
@@ -885,7 +873,7 @@ footer.main-footer {
 }
 
 .footer-social h4 {
-  color: var(--cor-branco); /* Título social em branco */
+  color: var(--cor-branco);
   font-size: 1.2rem;
   margin-bottom: 1rem;
   font-weight: 600;
@@ -906,7 +894,7 @@ footer.main-footer {
 }
 
 .footer-social .social-links-footer a:hover {
-  color: var(--cor-destaque); /* Hover em Dourado/Rosé */
+  color: var(--cor-destaque);
   transform: scale(1.1);
 }
 
@@ -918,7 +906,7 @@ footer.main-footer {
 
 .footer-bottom p {
   font-size: 0.85rem;
-  color: #cccccc; /* Texto inferior claro */
+  color: #cccccc;
   opacity: 0.8;
   margin: 0.3rem 0;
 }
@@ -933,7 +921,7 @@ footer.main-footer {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: var(--cor-primaria); /* Botão em Blush/Rosé */
+  background-color: var(--cor-primaria);
   color: var(--cor-branco);
   width: 50px;
   height: 50px;
@@ -954,7 +942,7 @@ footer.main-footer {
 }
 
 .back-to-top-btn:hover {
-  background-color: var(--cor-secundaria); /* Hover em Cinza-Taupe */
+  background-color: var(--cor-secundaria);
   color: var(--cor-branco);
   transform: scale(1.1);
 }
@@ -962,34 +950,6 @@ footer.main-footer {
 .back-to-top-btn.show {
   opacity: 1;
   visibility: visible;
-}
-
-/* PÁGINA DE OBRIGADO */
-.thank-you-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  text-align: center;
-  background-color: var(--cor-fundo);
-}
-
-.thank-you-box {
-  background-color: var(--cor-branco);
-  padding: 4rem;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px var(--cor-sombra);
-}
-
-.thank-you-box h1 {
-  font-size: 3rem;
-  color: var(--cor-texto-principal); /* Título em preto #222 */
-}
-
-.thank-you-box p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-  color: var(--cor-texto-secundario); /* Parágrafo em #333 */
 }
 
 /* ANIMAÇÕES GERAIS */
@@ -1042,11 +1002,10 @@ footer.main-footer {
 }
 
 /* === ESTILOS PARA PÁGINA DE CARREIRA === */
-
 .page-hero {
   background:
     linear-gradient(rgba(51, 51, 51, 0.92), rgba(51, 51, 51, 0.92)),
-    url("imagens/fundo-ajuda.jpg"); /* Fundo escuro em cinza */
+    url("imagens/fundo-ajuda.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
@@ -1059,7 +1018,7 @@ footer.main-footer {
 }
 
 .page-hero h1 {
-  color: var(--cor-branco); /* H1 do Hero continua branco */
+  color: var(--cor-branco);
   font-size: 3.5rem;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
 }
@@ -1080,17 +1039,16 @@ footer.main-footer {
 .career-text h2 {
   text-align: left;
   font-size: 2.5rem;
-  color: var(--cor-texto-principal); /* H2 da carreira em preto #222 */
+  color: var(--cor-texto-principal);
 }
 
 .career-text h2::after {
   margin-left: 0;
 }
 
-/* Títulos da carreira em Blush/Rosé */
 .career-text h3 {
   font-size: 1.7rem;
-  color: var(--cor-primaria); /* Títulos de subseção em Blush/Rosé */
+  color: var(--cor-primaria);
   margin-top: 2rem;
   margin-bottom: 1rem;
 }
@@ -1106,10 +1064,9 @@ footer.main-footer {
   padding-left: 30px;
   margin-bottom: 0.8rem;
   font-size: 1.1rem;
-  color: var(--cor-texto-secundario); /* Texto da lista em #333 */
+  color: var(--cor-texto-secundario);
 }
 
-/* Ícones de check em Blush/Rosé */
 .career-text ul li::before {
   content: "\f00c";
   font-family: "Font Awesome 6 Free";
@@ -1124,18 +1081,15 @@ footer.main-footer {
   flex: 1;
   min-width: 280px;
   text-align: center;
-  /* position: sticky; */ /* Removido para simplificar layout com dois carrosséis */
-  /* top: 120px; */
 }
 
 .career-image > img {
-  /* Seleciona apenas a imagem principal (se houver) */
   width: 100%;
   max-width: 350px;
   height: auto;
   border-radius: 12px;
   box-shadow: 0 12px 30px var(--cor-sombra);
-  margin-bottom: 2rem; /* Adiciona espaço se houver imagem estática */
+  margin-bottom: 2rem;
 }
 
 /* === CARROSSEL COM CONTROLES === */
@@ -1143,15 +1097,13 @@ footer.main-footer {
   width: 100%;
   max-width: 350px;
   aspect-ratio: 1 / 1.2;
-  margin: 0 auto; /* Centraliza o carrossel na coluna */
-  /* margin: 2rem auto 0; */ /* Removido margin-top padrão */
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 12px;
   box-shadow: 0 12px 30px var(--cor-sombra);
-  position: relative; /* Necessário para posicionar as setas */
+  position: relative;
 }
 
-/* Adiciona margem entre os carrosséis na página de carreira */
 .career-image .slider-container + .slider-container {
   margin-top: 2rem;
 }
@@ -1168,16 +1120,16 @@ footer.main-footer {
   height: 100%;
   flex-shrink: 0;
   position: absolute;
-  top: 0; /* Garante alinhamento */
-  left: 0; /* Garante alinhamento */
+  top: 0;
+  left: 0;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out; /* Transição suave de fade */
-  z-index: 1; /* Slide inativo fica atrás */
+  transition: opacity 0.8s ease-in-out;
+  z-index: 1;
 }
 
 .slide.active {
   opacity: 1;
-  z-index: 2; /* Slide ativo fica na frente */
+  z-index: 2;
 }
 
 .slide img {
@@ -1186,31 +1138,25 @@ footer.main-footer {
   object-fit: cover;
 }
 
-/* Estilos das Setas */
 .slider-container .prev,
 .slider-container .next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(
-    217,
-    184,
-    172,
-    0.6
-  ); /* Fundo Blush/Rosé semi-transparente */
+  background-color: rgba(217, 184, 172, 0.6);
   color: var(--cor-branco);
   border: none;
   padding: 0.8rem;
   border-radius: 50%;
   cursor: pointer;
-  z-index: 3; /* Acima dos slides */
+  z-index: 3;
   font-size: 1.2rem;
-  line-height: 1; /* Remove altura extra */
-  display: flex; /* Para centralizar o ícone */
+  line-height: 1;
+  display: flex;
   align-items: center;
   justify-content: center;
-  width: 40px; /* Largura fixa */
-  height: 40px; /* Altura fixa */
+  width: 40px;
+  height: 40px;
   transition: background-color 0.3s ease;
 }
 
@@ -1224,10 +1170,10 @@ footer.main-footer {
 
 .slider-container .prev:hover,
 .slider-container .next:hover {
-  background-color: rgba(217, 184, 172, 0.9); /* Mais opaco no hover */
+  background-color: rgba(217, 184, 172, 0.9);
 }
 
-/* RESPONSIVIDADE */
+/* RESPONSIVIDADE E AJUSTES MOBILE */
 @media (max-width: 992px) {
   .container {
     padding: 0 1rem;
@@ -1273,8 +1219,8 @@ footer.main-footer {
   }
 
   .career-image {
-    position: static; /* Remove sticky no mobile/tablet */
-    margin-bottom: 2rem; /* Adiciona espaço abaixo dos carrosséis */
+    position: static;
+    margin-bottom: 2rem;
   }
 
   .ajuda-fotos {
@@ -1306,11 +1252,6 @@ footer.main-footer {
   h2 {
     font-size: 2.2rem;
   }
-  .cta-button,
-  .button-secondary {
-    padding: 0.9rem 2rem;
-    font-size: 1.05rem;
-  }
   .sobre-imagem img {
     max-width: 280px;
   }
@@ -1321,7 +1262,6 @@ footer.main-footer {
     padding: 1.4rem 1.6rem;
   }
   .faq-resposta-content {
-    /* Ajusta padding da resposta no mobile */
     padding: 1.2rem 1.6rem;
   }
   .footer-content,
@@ -1331,29 +1271,30 @@ footer.main-footer {
   }
   .footer-info,
   .footer-social {
-    /* Centraliza no tablet também */
     text-align: center;
     width: 100%;
   }
   .footer-info h3 {
-    display: inline-block; /* Mantém a borda centralizada */
+    display: inline-block;
   }
 }
 
 @media (max-width: 768px) {
+  .navbar {
+    padding: 0.8rem 0;
+  }
   .navbar .container {
     justify-content: center;
     flex-direction: column;
     gap: 1rem;
   }
-
   .nav-menu {
+    gap: 0.5rem 0.8rem;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 1rem;
   }
   .nav-menu a {
-    font-size: 0.95rem;
+    font-size: 0.85rem; /* Fonte um pouco menor para caber tudo */
   }
   .hero h1 {
     font-size: 2.8rem;
@@ -1374,11 +1315,23 @@ footer.main-footer {
   h2 {
     font-size: 2rem;
   }
+
+  /* Ajustes dos Botões no Mobile para Simetria */
+  .button-group {
+    flex-direction: column;
+    align-items: stretch; /* Faz os botões esticarem */
+    gap: 0.8rem;
+    width: 100%;
+  }
+
   .cta-button,
   .button-secondary {
-    padding: 0.9rem 2rem;
-    font-size: 1.05rem;
+    width: 100%; /* Largura total no mobile */
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    margin: 0 !important; /* Remove margens indesejadas */
   }
+
   .sobre-imagem img {
     max-width: 280px;
   }
@@ -1389,7 +1342,6 @@ footer.main-footer {
     padding: 1.4rem 1.6rem;
   }
   .faq-resposta-content {
-    /* Ajusta padding da resposta no mobile */
     padding: 1.2rem 1.6rem;
   }
   .footer-content {
@@ -1403,11 +1355,9 @@ footer.main-footer {
     text-align: center;
     width: 100%;
   }
-  /* Ajuste para ícones sociais no Hero em telas muito pequenas */
   .hero-social-links a {
-    font-size: 1.8rem; /* Reduz um pouco mais */
+    font-size: 1.8rem;
   }
-  /* Setas do carrossel menores no mobile */
   .slider-container .prev,
   .slider-container .next {
     width: 35px;
@@ -1415,25 +1365,7 @@ footer.main-footer {
     font-size: 1rem;
     padding: 0.6rem;
   }
-}
 
-/* =========================================
-   CORREÇÃO DE BUGS MOBILE 
-   ========================================= */
-@media (max-width: 768px) {
-  /* 1. Corrige o Menu Gigante para não ocupar meia tela */
-  .navbar {
-    padding: 0.8rem 0;
-  }
-  .nav-menu {
-    gap: 0.5rem 0.8rem;
-    justify-content: center;
-  }
-  .nav-menu a {
-    font-size: 0.8rem;
-  }
-
-  /* 2. Corrige as Imagens Invadindo o Texto na seção Ajuda */
   .ajuda-fotos {
     display: flex;
     flex-direction: column;
@@ -1441,7 +1373,7 @@ footer.main-footer {
   }
   .ajuda-foto {
     width: 100%;
-    height: 300px; /* Trava a altura máxima da foto */
+    height: 300px;
     border-radius: 12px;
     overflow: hidden;
   }
@@ -1449,6 +1381,15 @@ footer.main-footer {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top; /* Garante que o rosto apareça na foto vertical */
+    object-position: top;
+  }
+
+  /* Ajuste para Intercalar Imagem e Texto na página Trajetória no Mobile */
+  .intercalar-mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  .intercalar-mobile > .slider-container {
+    margin: 2rem auto; /* Dá respiro para as imagens no meio do texto */
   }
 }
