@@ -31,7 +31,7 @@ html {
 
 body {
   background-color: var(--cor-fundo);
-  color: var(--cor-texto-secundario); /* COR BASE PARA TEXTOS */
+  color: var(--cor-texto-secundario);
   line-height: 1.8;
 }
 
@@ -69,7 +69,7 @@ section {
 h1,
 h2,
 h3 {
-  color: var(--cor-texto-principal); /* TODOS os títulos em preto #222 */
+  color: var(--cor-texto-principal);
   margin-bottom: 1rem;
   line-height: 1.2;
   text-shadow: 1px 1px 2px var(--cor-sombra-leve);
@@ -106,12 +106,12 @@ h3 {
 
 p {
   margin-bottom: 1rem;
-  color: var(--cor-texto-secundario); /* Parágrafos em #333 */
+  color: var(--cor-texto-secundario);
 }
 
 .subtitle {
   font-size: 1.4rem;
-  color: var(--cor-texto-secundario); /* Subtítulo em #333 */
+  color: var(--cor-texto-secundario);
   margin-bottom: 2.5rem;
 }
 
@@ -119,25 +119,25 @@ p {
   text-align: center;
 }
 
-/* GRUPO DE BOTÕES - ALINHAMENTO E SIMETRIA */
+/* =========================================
+   GRUPO DE BOTÕES - SIMETRIA PERFEITA (CSS GRID)
+   ========================================= */
 .button-group {
   margin-top: 1.5rem;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1rem;
-  flex-wrap: wrap;
-  align-items: center;
+  width: 100%;
 }
 
-/* BOTÕES GERAIS - COM GRADIENTE E CONTRASTE */
-.cta-button {
-  display: inline-block;
-  background-image: linear-gradient(
-    to right,
-    var(--cor-primaria) 0%,
-    #c0a397 100%
-  );
-  color: var(--cor-texto-principal);
-  padding: 1.1rem 2.8rem;
+/* BOTÕES GERAIS */
+.cta-button,
+.button-secondary {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.1rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -146,8 +146,20 @@ p {
   cursor: pointer;
   font-size: 1.1rem;
   letter-spacing: 0.5px;
-  box-shadow: 0 5px 15px rgba(217, 184, 172, 0.3);
+  box-sizing: border-box;
   text-align: center;
+  margin: 0 !important; /* Força a remover margens conflitantes */
+}
+
+/* Cores do CTA */
+.cta-button {
+  background-image: linear-gradient(
+    to right,
+    var(--cor-primaria) 0%,
+    #c0a397 100%
+  );
+  color: var(--cor-texto-principal);
+  box-shadow: 0 5px 15px rgba(217, 184, 172, 0.3);
 }
 
 .cta-button:hover {
@@ -157,26 +169,15 @@ p {
   box-shadow: 0 10px 20px rgba(217, 184, 172, 0.4);
 }
 
-/* Botão secundário em Cinza-Taupe com gradiente */
+/* Cores do Botão Secundário */
 .button-secondary {
-  display: inline-block;
   background-image: linear-gradient(
     to right,
     var(--cor-secundaria) 0%,
     var(--cor-secundaria-darker) 100%
   );
   color: var(--cor-texto-principal);
-  padding: 1.1rem 2.8rem;
-  border-radius: 8px;
-  text-decoration: none;
-  font-weight: 600;
-  transition: all 0.3s ease;
-  border: none;
-  cursor: pointer;
-  font-size: 1.1rem;
-  letter-spacing: 0.5px;
   box-shadow: 0 5px 15px var(--cor-sombra);
-  text-align: center;
 }
 
 .button-secondary:hover {
@@ -190,7 +191,7 @@ p {
   box-shadow: 0 10px 20px rgba(140, 140, 140, 0.2);
 }
 
-/* EFEITO PULSANDO NO BOTÃO CTA */
+/* EFEITO PULSANDO NO BOTÃO CTA DO BANNER */
 .pulse {
   animation: pulse-animation 2s infinite;
 }
@@ -641,6 +642,7 @@ p {
 .faq-resposta-content p {
   margin-bottom: 0.5rem;
 }
+
 .faq-resposta-content p:last-child {
   margin-bottom: 0;
 }
@@ -781,6 +783,7 @@ p {
   color: var(--cor-texto-secundario);
   margin-top: 1.5rem;
 }
+
 .form-security-text i {
   margin-right: 5px;
 }
@@ -1294,7 +1297,7 @@ footer.main-footer {
     justify-content: center;
   }
   .nav-menu a {
-    font-size: 0.85rem; /* Fonte um pouco menor para caber tudo */
+    font-size: 0.85rem;
   }
   .hero h1 {
     font-size: 2.8rem;
@@ -1316,20 +1319,9 @@ footer.main-footer {
     font-size: 2rem;
   }
 
-  /* Ajustes dos Botões no Mobile para Simetria */
+  /* Mantém botões em 1 coluna no celular para não ficar apertado */
   .button-group {
-    flex-direction: column;
-    align-items: stretch; /* Faz os botões esticarem */
-    gap: 0.8rem;
-    width: 100%;
-  }
-
-  .cta-button,
-  .button-secondary {
-    width: 100%; /* Largura total no mobile */
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    margin: 0 !important; /* Remove margens indesejadas */
+    grid-template-columns: 1fr;
   }
 
   .sobre-imagem img {
@@ -1382,14 +1374,5 @@ footer.main-footer {
     height: 100%;
     object-fit: cover;
     object-position: top;
-  }
-
-  /* Ajuste para Intercalar Imagem e Texto na página Trajetória no Mobile */
-  .intercalar-mobile {
-    display: flex;
-    flex-direction: column;
-  }
-  .intercalar-mobile > .slider-container {
-    margin: 2rem auto; /* Dá respiro para as imagens no meio do texto */
   }
 }

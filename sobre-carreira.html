@@ -90,8 +90,12 @@
                   <img src="imagens/Formatura4.jpg" alt="Foto de formatura 4" />
                 </div>
               </div>
-              <button class="prev"><i class="fas fa-chevron-left"></i></button>
-              <button class="next"><i class="fas fa-chevron-right"></i></button>
+              <button class="prev" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="next" aria-label="Próximo">
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
 
             <div
@@ -118,8 +122,12 @@
                   />
                 </div>
               </div>
-              <button class="prev"><i class="fas fa-chevron-left"></i></button>
-              <button class="next"><i class="fas fa-chevron-right"></i></button>
+              <button class="prev" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+              </button>
+              <button class="next" aria-label="Próximo">
+                <i class="fas fa-chevron-right"></i>
+              </button>
             </div>
           </div>
 
@@ -169,10 +177,10 @@
                     />
                   </div>
                 </div>
-                <button class="prev">
+                <button class="prev" aria-label="Anterior">
                   <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="next">
+                <button class="next" aria-label="Próximo">
                   <i class="fas fa-chevron-right"></i>
                 </button>
               </div>
@@ -240,10 +248,10 @@
                     />
                   </div>
                 </div>
-                <button class="prev">
+                <button class="prev" aria-label="Anterior">
                   <i class="fas fa-chevron-left"></i>
                 </button>
-                <button class="next">
+                <button class="next" aria-label="Próximo">
                   <i class="fas fa-chevron-right"></i>
                 </button>
               </div>
@@ -376,6 +384,57 @@
     ></a>
 
     <script src="scripts.js"></script>
-    <script src="carousel.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Encontra todos os carrosséis na página
+        const carousels = document.querySelectorAll(".slider-container");
+
+        carousels.forEach((carousel) => {
+          const slides = carousel.querySelectorAll(".slide");
+          const btnPrev = carousel.querySelector(".prev");
+          const btnNext = carousel.querySelector(".next");
+          let currentSlide = 0;
+
+          // Função para mostrar o slide ativo
+          function showSlide(index) {
+            slides.forEach((slide, i) => {
+              slide.classList.remove("active");
+              if (i === index) {
+                slide.classList.add("active");
+              }
+            });
+          }
+
+          // Se tiver botões, adiciona os eventos de clique
+          if (btnPrev && btnNext && slides.length > 0) {
+            btnPrev.addEventListener("click", () => {
+              currentSlide =
+                currentSlide > 0 ? currentSlide - 1 : slides.length - 1;
+              showSlide(currentSlide);
+            });
+
+            btnNext.addEventListener("click", () => {
+              currentSlide =
+                currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+              showSlide(currentSlide);
+            });
+
+            // OPCIONAL: Rotação Automática a cada 4 segundos
+            setInterval(() => {
+              // Verifica se o carrossel está visível (para não rodar os de mobile no desktop e vice-versa)
+              if (
+                window.getComputedStyle(carousel.parentElement).display !==
+                "none"
+              ) {
+                currentSlide =
+                  currentSlide < slides.length - 1 ? currentSlide + 1 : 0;
+                showSlide(currentSlide);
+              }
+            }, 4000);
+          }
+        });
+      });
+    </script>
   </body>
 </html>
