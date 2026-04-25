@@ -130,14 +130,22 @@ p {
   width: 100%;
 }
 
+.button-group .cta-button,
+.button-group .button-secondary {
+  width: 100%;
+  margin: 0;
+}
+
 /* BOTÕES GERAIS */
 .cta-button,
 .button-secondary {
-  width: 100%;
+  width: fit-content;
+  min-width: 280px;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 1.1rem 1.5rem;
+  padding: 1.1rem 2.5rem;
   border-radius: 8px;
   text-decoration: none;
   font-weight: 600;
@@ -148,7 +156,6 @@ p {
   letter-spacing: 0.5px;
   box-sizing: border-box;
   text-align: center;
-  margin: 0 !important; /* Força a remover margens conflitantes */
 }
 
 /* Cores do CTA */
