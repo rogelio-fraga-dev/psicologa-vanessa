@@ -1034,26 +1034,25 @@ footer.main-footer {
 }
 
 .career-container {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  gap: 4rem;
-  flex-wrap: wrap;
+  display: block;
+  width: 100%;
 }
 
 .career-text {
-  flex: 2;
-  min-width: 300px;
+  width: 100%;
+  max-width: 850px;
+  margin: 0 auto;
 }
 
 .career-text h2 {
-  text-align: left;
+  text-align: center;
   font-size: 2.5rem;
   color: var(--cor-texto-principal);
 }
 
 .career-text h2::after {
-  margin-left: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .career-text h3 {
@@ -1061,12 +1060,15 @@ footer.main-footer {
   color: var(--cor-primaria);
   margin-top: 2rem;
   margin-bottom: 1rem;
+  text-align: center;
 }
 
 .career-text ul {
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 1.5rem;
+  text-align: left;
+  display: block;
 }
 
 .career-text ul li {

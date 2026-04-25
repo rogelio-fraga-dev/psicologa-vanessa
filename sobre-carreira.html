@@ -30,17 +30,12 @@
 
     <style>
       .mobile-slider-wrap {
-        display: none;
+        display: block;
         width: 100%;
         margin: 2.5rem auto;
       }
-      @media (max-width: 992px) {
-        .desktop-image-column {
-          display: none !important;
-        }
-        .mobile-slider-wrap {
-          display: block;
-        }
+      .desktop-image-column {
+        display: none !important;
       }
     </style>
   </head>
@@ -74,62 +69,7 @@
 
       <section id="carreira" class="section-padding">
         <div class="container career-container">
-          <div class="career-image desktop-image-column fade-in">
-            <div class="slider-container graduation-slider">
-              <div class="slider">
-                <div class="slide active">
-                  <img src="imagens/Formatura1.jpg" alt="Foto de formatura 1" />
-                </div>
-                <div class="slide">
-                  <img src="imagens/Formatura2.jpg" alt="Foto de formatura 2" />
-                </div>
-                <div class="slide">
-                  <img src="imagens/Formatura3.jpg" alt="Foto de formatura 3" />
-                </div>
-                <div class="slide">
-                  <img src="imagens/Formatura4.jpg" alt="Foto de formatura 4" />
-                </div>
-              </div>
-              <button class="prev" aria-label="Anterior">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <button class="next" aria-label="Próximo">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
 
-            <div
-              class="slider-container professional-slider"
-              style="margin-top: 2rem"
-            >
-              <div class="slider">
-                <div class="slide active">
-                  <img
-                    src="imagens/Profissional1.jpg"
-                    alt="Foto profissional 1"
-                  />
-                </div>
-                <div class="slide">
-                  <img
-                    src="imagens/Profissional2.jpg"
-                    alt="Foto profissional 2"
-                  />
-                </div>
-                <div class="slide">
-                  <img
-                    src="imagens/Profissional3.jpg"
-                    alt="Foto profissional 3"
-                  />
-                </div>
-              </div>
-              <button class="prev" aria-label="Anterior">
-                <i class="fas fa-chevron-left"></i>
-              </button>
-              <button class="next" aria-label="Próximo">
-                <i class="fas fa-chevron-right"></i>
-              </button>
-            </div>
-          </div>
 
           <div class="career-text slide-in-left">
             <h2>Do Sonho à Prática Clínica</h2>
