@@ -242,4 +242,17 @@ document.addEventListener('DOMContentLoaded', function() {
          });
     }
 
+
+    // --- GOOGLE ADS: TRACKING WHATSAPP ---
+    const whatsappLinks = document.querySelectorAll('a[href*="api.whatsapp.com"]');
+    whatsappLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                    'send_to': 'AW-CONVERSION_ID/LABEL_WHATSAPP'
+                });
+            }
+        });
+    });
+
 });

@@ -38,6 +38,15 @@
     />
 
     <script defer src="/_vercel/insights/script.js"></script>
+
+    <!-- Google Ads Tag (gtag.js) - Substitua 'AW-CONVERSION_ID' pelo seu ID real -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-CONVERSION_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-CONVERSION_ID');
+    </script>
   </head>
   <body>
     <header class="navbar">
@@ -684,9 +693,16 @@
                 templateParams,
               );
 
-              // Reseta formulário e avisa sucesso
-              form.reset();
-              msgSucesso.style.display = "block";
+               // Reseta formulário e avisa sucesso
+               form.reset();
+               msgSucesso.style.display = "block";
+
+               // --- TRACKING GOOGLE ADS (CONVERSÃO FORMULÁRIO) ---
+               if (typeof gtag === "function") {
+                 gtag("event", "conversion", {
+                   send_to: "AW-CONVERSION_ID/LABEL_CONTATO",
+                 });
+               }
             } catch (error) {
               console.error("Erro ao enviar contato da Vanessa:", error);
               msgErro.style.display = "block";
